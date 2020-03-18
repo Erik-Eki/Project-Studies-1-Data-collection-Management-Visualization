@@ -7,19 +7,17 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema data1
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `data` ;
 
 -- -----------------------------------------------------
 -- Schema data1
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `data` DEFAULT CHARACTER SET utf8 ;
-USE `data` ;
+# CREATE SCHEMA IF NOT EXISTS `data` DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE IF NOT EXISTS data1;
+USE data1 ;
 
 -- -----------------------------------------------------
 -- Table `cart_data`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cart_data` ;
-
 CREATE TABLE IF NOT EXISTS `cart_data` (
   `idcart` INT NOT NULL,
   `time` VARCHAR(45) NOT NULL,
