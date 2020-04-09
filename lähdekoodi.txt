@@ -157,20 +157,55 @@ for y in final_list1:
         i -= 1
     i += 1
 
+#Erottelee päivät
+from datetime import date, timedelta
+d = 0
+dates = []
 
-#kuva    
-df = df.drop(df[(df.x < 1000.0) & (df.y > 2000.0)].index)
+start_date = date(2019, 10, 1)
+end_date = date(2019, 10, 31)
+delta = timedelta(days=1)
+while start_date <= end_date:
+    ts = start_date.strftime("%Y/%m/%d")
+    start_date += delta
+    d += 1
+    dates.append(ts)
+    print(d, ts)
+print(dates)
+
+#Plottaa kärrien liikkeet per päivä eri väreillä
+from matplotlib.pyplot import cm
+from cycler import cycler
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+
+n = len(dates)
+colors=iter(cm.rainbow(np.linspace(0,1,n)))
+
 plt.rcParams['figure.figsize'] = 20, 10
 img = plt.imread("pic.png")
 fig, ax = plt.subplots()
+#imgplot = plt.imshow(img, extent = (-700, 10406, 5224, -250))
 ax.imshow(img, extent=[-800, 10400, 5220, -250])
-ax.plot(df.x, df.y , marker='o', linewidth=0.2, markersize=3, color='firebrick')
+
+#plt.rc('axes', prop_cycle=(cycler('color', ['r', 'c', 'm','lime', 'b', 'darkorange', 'g'])))
+for i in dates:
+    tsT = table.loc[table['T'] == i, :]
+    c=next(colors)
+    for i in range(n):
+        plt.plot(tsT.X, tsT.Y, color=c)
+plt.show()
+
+#heatmap
+from scipy.ndimage.filters import gaussian_filter
+import matplotlib.cm as cm
 
 x = df.x.tolist()
 y = df.y.tolist()
 
 
-#heatmap
+
 def myplot(x, y, s, bins=1000):
     heatmap, xedges, yedges = np.histogram2d(x, y, bins=bins)
     heatmap = gaussian_filter(heatmap, sigma=s)
