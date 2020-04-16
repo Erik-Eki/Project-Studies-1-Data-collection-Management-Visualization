@@ -14,12 +14,13 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor(dictionary=True)
-mycursor.execute("SELECT node_id, timestamp, x,y,z,q FROM SensorData WHERE (node_id = 51719)  AND timestamp > '2019-09-24 13:05:08.078133+00:00' AND timestamp < '2019-09-30 13:05:08.078133+00:00'  AND x > 0  AND X < 10406 AND y < 5220 AND y > 0 AND q < 100 AND z = 0 "); 
-df = pd.DataFrame(mycursor.fetchall())
+mycursor.execute("SELECT node_id, timestamp, x,y,z,q FROM SensorData WHERE (node_id = 51719)  AND timestamp > '2019-10-01 00:00:00.000000+00:00' AND timestamp < '2019-10-31 00:00:00.000000+00:00'  AND x > 0  AND X < 10406 AND y < 5220 AND y > 0 AND q < 100 AND z = 0 ");
 
+df = pd.DataFrame(mycursor.fetchall())
+df = df.drop(df[(df.x < 1000.0) & (df.y > 2000.0)].index)
+df = df.drop(df[(df.x > 9000.0)].index)
 x = np.zeros((3, 4, 5))
 np.moveaxis(x, 0, -1).shape
-#milestone["only_date"] = [df.date() for df in milestone["datetime"]]
 table = pd.DataFrame(columns=list('NTXYZQ'))
 table.N = df.node_id
 table.T = df.timestamp
@@ -30,14 +31,12 @@ table.Q = df.q
 
 
 table['T'] = table['T'].astype(str)
-table['T'].dtype
-table['T'] = table['T'].str.slice(2, -7)
-print(table)
+table['T'] = table['T'].str.slice(2, -15)
 
-table['T'] = table['T'].astype('datetime64[ns]')
-table['T'] = pd.Series(table['T']).dt.round("S")
-table['T'] = table['T'].dt.date
-table['T'].head()
+table['T'] = pd.to_datetime(table['T'], errors='coerce')
+table['T'] = table['T'].dt.normalize()
+
+print(table)
 
 
 #biiragga ja balggi, barhaad gaverid
