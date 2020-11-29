@@ -1,21 +1,29 @@
 Projetina Iiwarin Tokmannin älykärryt, jotka lähettävät sijaintidataa tietokantaan, josta sitten tehdään jotain nättiä kuten heatmappi.
 
 MASTER-HAARA
----- UUDEN BRANCHIN LUONTI -----
-git branch (branchin nimi)
----- BRANCHIN VAIHTO -----
-git checkout (branchin nimi)
------ ESIMERKKI -----
+Uuden branchin luonti
+```git branch (branchin nimi)```
+Branchin vaihto
+```git checkout (branchin nimi)```
+
+Esim.
+```
 git branch aleksi ( Luo uuden branchin )
 git branch ( Näkee kaikki branchit )
 git checkout aleksi ( Vaihtaa aleksi branchiin )
 git push --set-upstream origin aleksi ( Pushaus menee perille)
------- PUSHAUS -------
+```
+Push
+```
 git add .
 git commit -m "kommentti"
 git push .
------ JOS PUSH EI MENE PERILLE -----
-git push --set-upstream origin
+```
+
+Jos push ei mene perille
+```git push --set-upstream origin```
+
+---
 
 Projektin yhteistyö käytäntö on kopioitu Fight Clubista:
 1. Ensimmäinen Projekti 1 klubin sääntö: Ei puhuta projektista
