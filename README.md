@@ -1,12 +1,5 @@
 Projetina Iiwarin Tokmannin älykärryt, jotka lähettävät sijaintidataa tietokantaan, josta sitten tehdään jotain nättiä kuten heatmappi.
 
-<<<<<<< Updated upstream
-Projektin yhteistyö käytäntö:
-1. Ei puhuta projektista
-2. Ei tapeta toisiamme
-3. Merkataan ylös mitä tehdään Issues kohtaan
-4. Käytetään Clockifyta aktiivisesti ja MUISTETAAN OTTAA POIS työn jälkeen.
-=======
 MASTER-HAARA
 ---- UUDEN BRANCHIN LUONTI -----
 git branch (branchin nimi)
@@ -30,7 +23,6 @@ Projektin yhteistyö käytäntö on kopioitu Fight Clubista:
 3. Muistetaan puskea gittiin tekemä työ, niin ei tarvitse ihmetellä mitä tekee.
 4. Merkataan ylös mitä tehdään Issues kohtaan
 5. Käytetään Clockifyta aktiivisesti ja MUISTETAAN OTTAA POIS työn jälkeen.
->>>>>>> Stashed changes
 
 Ryhmäpäiväkirja: https://gitlab.dclabra.fi/wiki/vzO1Zfp0QhyNxOyAehLpbA?both
 
