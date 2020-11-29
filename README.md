@@ -1,5 +1,6 @@
 Projetina Iiwarin Tokmannin älykärryt, jotka lähettävät sijaintidataa tietokantaan, josta sitten tehdään jotain nättiä kuten heatmappi.
 
+=======
 MASTER-HAARA
 ---- UUDEN BRANCHIN LUONTI -----
 git branch (branchin nimi)
@@ -25,5 +26,6 @@ Projektin yhteistyö käytäntö on kopioitu Fight Clubista:
 5. Käytetään Clockifyta aktiivisesti ja MUISTETAAN OTTAA POIS työn jälkeen.
 
 Ryhmäpäiväkirja: https://gitlab.dclabra.fi/wiki/vzO1Zfp0QhyNxOyAehLpbA?both
+Valtterin dokumentointi: https://gitlab.dclabra.fi/wiki/phYq9COUSNOkAUwHZYUeNw#
 
 Loppuraportti: https://gitlab.dclabra.fi/wiki/KvKzsQ_tS3W1f2cMpp8p9w
