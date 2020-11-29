@@ -2,9 +2,13 @@ Projetina Iiwarin Tokmannin älykärryt, jotka lähettävät sijaintidataa tieto
 
 MASTER-HAARA
 Uuden branchin luonti
-```git branch (branchin nimi)```
+```
+git branch (branchin nimi)
+```
 Branchin vaihto
-```git checkout (branchin nimi)```
+```
+git checkout (branchin nimi)
+```
 
 Esim.
 ```
